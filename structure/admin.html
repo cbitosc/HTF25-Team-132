@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Event Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🛡️ Admin Panel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="admin.html" class="active">Admin</a>
+    </nav>
+  </header>
+
+  <div class="admin-container">
+    <aside class="admin-sidebar">
+      <nav class="admin-nav">
+        <a href="#" onclick="showAdminSection('overview')" class="active">📊 Overview</a>
+        <a href="#" onclick="showAdminSection('events')">📅 Event Moderation</a>
+        <a href="#" onclick="showAdminSection('clubs')">🏛️ Club Management</a>
+        <a href="#" onclick="showAdminSection('users')">👥 User Management</a>
+        <a href="#" onclick="showAdminSection('reports')">📋 Reports</a>
+        <a href="#" onclick="showAdminSection('settings')">⚙️ Settings</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <section id="overview-section" class="admin-section active">
+        <h2>Platform Overview</h2>
+        <div class="admin-stats">
+          <div class="admin-stat-card">
+            <h3>Total Events</h3>
+            <p class="stat-number">24</p>
+            <span class="stat-change positive">+3 this week</span>
+          </div>
+          <div class="admin-stat-card">
+            <h3>Active Clubs</h3>
+            <p class="stat-number">12</p>
+            <span class="stat-change positive">+1 this month</span>
+          </div>
+          <div class="admin-stat-card">
+            <h3>Total Users</h3>
+            <p class="stat-number">456</p>
+            <span class="stat-change positive">+23 this week</span>
+          </div>
+          <div class="admin-stat-card">
+            <h3>Pending Approvals</h3>
+            <p class="stat-number">3</p>
+            <span class="stat-change neutral">Requires attention</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="events-section" class="admin-section">
+        <h2>Event Moderation</h2>
+        <div class="moderation-container">
+          <div class="pending-events" id="pending-events">
+            <h3>Pending Approval</h3>
+            <div class="event-mod-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clubs-section" class="admin-section">
+        <h2>Club Management</h2>
+        <div class="club-management" id="club-management">
+          <button class="add-club-btn" onclick="showAddClubForm()">+ Add New Club</button>
+          <div class="clubs-list" id="admin-clubs-list"></div>
+        </div>
+      </section>
+
+      <section id="users-section" class="admin-section">
+        <h2>User Management</h2>
+        <div class="user-management">
+          <input type="text" id="user-search" placeholder="Search users...">
+          <div class="users-list" id="users-list"></div>
+        </div>
+      </section>
+
+      <section id="reports-section" class="admin-section">
+        <h2>Reports & Analytics</h2>
+        <div class="reports-grid">
+          <div class="report-card">
+            <h3>Event Attendance Report</h3>
+            <button onclick="generateReport('attendance')">Generate Report</button>
+          </div>
+          <div class="report-card">
+            <h3>Club Activity Report</h3>
+            <button onclick="generateReport('activity')">Generate Report</button>
+          </div>
+          <div class="report-card">
+            <h3>User Engagement Report</h3>
+            <button onclick="generateReport('engagement')">Generate Report</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings-section" class="admin-section">
+        <h2>Platform Settings</h2>
+        <form class="settings-form">
+          <div class="setting-group">
+            <label>Auto-approve events</label>
+            <input type="checkbox" id="auto-approve">
+          </div>
+          <div class="setting-group">
+            <label>Max events per club</label>
+            <input type="number" id="max-events" value="10">
+          </div>
+          <div class="setting-group">
+            <label>Notification frequency</label>
+            <select id="notification-freq">
+              <option value="instant">Instant</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </div>
+          <button type="submit">Save Settings</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 SMIC | Developed by Venkat Makkalwar</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/smooth-scroll.js"></script>
+  <script src="../js/features.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

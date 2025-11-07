@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Dashboard | Event Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🎯 Club Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="club-login.html" class="active">Club Login</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="club-info">
+        <h3 id="club-name">Tech Club</h3>
+        <p id="club-members">156 Members</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" onclick="showSection('events')" class="active">📅 My Events</a>
+        <a href="#" onclick="showSection('create')">➕ Create Event</a>
+        <a href="#" onclick="showSection('members')">👥 Members</a>
+        <a href="#" onclick="showSection('analytics')">📊 Analytics</a>
+        <a href="#" onclick="showSection('profile')">⚙️ Club Profile</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <section id="events-section" class="dashboard-section active">
+        <h2>My Events</h2>
+        <div class="event-container" id="club-events"></div>
+      </section>
+
+      <section id="create-section" class="dashboard-section">
+        <h2>Create New Event</h2>
+        <form id="eventForm" class="event-form">
+          <input type="text" id="eventName" placeholder="Event Name" required>
+          <input type="date" id="eventDate" required>
+          <input type="time" id="eventTime" required>
+          <input type="text" id="eventLocation" placeholder="Location" required>
+          <textarea id="eventDesc" placeholder="Event Description" required></textarea>
+          <input type="number" id="maxAttendees" placeholder="Max Attendees" min="1">
+          <select id="eventCategory">
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="competition">Competition</option>
+            <option value="social">Social Event</option>
+          </select>
+          <button type="submit">Create Event</button>
+        </form>
+      </section>
+
+      <section id="members-section" class="dashboard-section">
+        <h2>Club Members</h2>
+        <div class="members-container" id="club-members"></div>
+      </section>
+
+      <section id="analytics-section" class="dashboard-section">
+        <h2>Analytics Dashboard</h2>
+        <div class="analytics-grid">
+          <div class="analytics-card">
+            <h3>Total Events</h3>
+            <p class="big-number" id="total-club-events">8</p>
+          </div>
+          <div class="analytics-card">
+            <h3>Total Registrations</h3>
+            <p class="big-number" id="total-registrations">234</p>
+          </div>
+          <div class="analytics-card">
+            <h3>Attendance Rate</h3>
+            <p class="big-number" id="attendance-rate">87%</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile-section" class="dashboard-section">
+        <h2>Club Profile Settings</h2>
+        <form id="clubProfileForm" class="profile-form">
+          <input type="text" id="clubNameInput" placeholder="Club Name" value="Tech Club">
+          <textarea id="clubDescription" placeholder="Club Description">A community for tech enthusiasts to learn and grow together.</textarea>
+          <input type="email" id="clubEmail" placeholder="Contact Email" value="techclub@college.edu">
+          <select id="clubCategory">
+            <option value="technical">Technical</option>
+            <option value="cultural">Cultural</option>
+            <option value="sports">Sports</option>
+            <option value="academic">Academic</option>
+          </select>
+          <button type="submit">Update Profile</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 SMIC | Developed by Venkat Makkalwar</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/smooth-scroll.js"></script>
+  <script src="../js/features.js"></script>
+  <script src="../js/club-dashboard.js"></script>
+</body>
+</html>

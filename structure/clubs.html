@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubs | Club & Event Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🏛️ College Clubs</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="clubs.html" class="active">Clubs</a>
+      <a href="club-login.html">Club Login</a>
+      <a href="admin.html">Admin</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="search-section">
+    <input type="text" id="club-search" placeholder="🔍 Search clubs..." />
+    <select id="club-filter">
+      <option value="">All Categories</option>
+      <option value="technical">Technical</option>
+      <option value="cultural">Cultural</option>
+      <option value="sports">Sports</option>
+      <option value="academic">Academic</option>
+    </select>
+  </section>
+
+  <section id="clubs-list">
+    <div class="club-container" id="all-clubs"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 SMIC | Developed by Venkat Makkalwar</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/smooth-scroll.js"></script>
+  <script src="../js/features.js"></script>
+  <script src="../js/clubs.js"></script>
+</body>
+</html>

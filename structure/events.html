@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Club & Event Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>📅 All College Events</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="club-login.html">Club Login</a>
+      <a href="admin.html">Admin</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="events-filter">
+    <div class="filter-container">
+      <input type="text" id="event-search" placeholder="🔍 Search events...">
+      <select id="event-filter">
+        <option value="">All Events</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="today">Today</option>
+        <option value="this-week">This Week</option>
+      </select>
+      <select id="category-filter">
+        <option value="">All Categories</option>
+        <option value="workshop">Workshop</option>
+        <option value="seminar">Seminar</option>
+        <option value="competition">Competition</option>
+        <option value="social">Social Event</option>
+      </select>
+    </div>
+  </section>
+
+  <section id="event-list">
+    <div class="event-container" id="all-events"></div>
+  </section>
+
+  <!-- Event Registration Modal -->
+  <div id="registration-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Event Registration</h2>
+      <form id="registration-form">
+        <input type="hidden" id="event-id">
+        <input type="text" id="student-name" placeholder="Full Name" required>
+        <input type="email" id="student-email" placeholder="Email" required>
+        <input type="text" id="student-id" placeholder="Student ID" required>
+        <input type="tel" id="student-phone" placeholder="Phone Number">
+        <button type="submit">Register for Event</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- QR Code Modal -->
+  <div id="qr-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeQRModal()">&times;</span>
+      <h2>Event Check-in</h2>
+      <div id="qr-code-container"></div>
+      <p>Show this QR code at the event for check-in</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 SMIC | Developed by Venkat Makkalwar</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/features.js"></script>
+</body>
+</html>
